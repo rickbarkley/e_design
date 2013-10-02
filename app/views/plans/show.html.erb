@@ -1,0 +1,101 @@
+<p id="notice"><%= notice %></p>
+
+<center><h1>Plan View | <%= @plan.name %></h1></center>
+<hr>
+<div class="plan span8">
+	
+
+<center><%= link_to image_tag(@plan.drawing_1.url(:full)), @plan.drawing_1.url(:original), :popup=>[:original] %></center>
+<br /><br />
+<center><h3><%= link_to "click to Purchase" , "#" %></h3></center>
+
+	</div>
+	
+
+<div class="span3">
+  <div class="well pull-right">
+
+	<dl class="dl-horizontal">
+		<p>
+		  <b>Bedrooms:</b>
+		  <%= @plan.bedrooms %>
+		</p>
+
+		<p>
+		  <b>Sqfoot:</b>
+		  <%= @plan.sqfoot %>
+		</p>
+
+		<p>
+		  <b>Levels:</b>
+		  <%= @plan.levels %>
+		</p>
+
+		<p>
+		  <b>Bathrooms:</b>
+		  <%= @plan.bathrooms %>
+		</p>
+
+		<p>
+		  <b>Price:</b>
+		  <%= @plan.price %>
+		</p>
+
+		<p>
+		  <b>Name:</b>
+		  <%= @plan.name %>
+		</p>
+
+		<p>
+		  <b>Half bath:</b>
+		  <%= @plan.half_bath %>
+		</p>
+
+		<p>
+		  <b>Living:</b>
+		  <%= @plan.living %>
+		</p>
+
+		<p>
+		  <b>Suite:</b>
+		  <%= @plan.suite %>
+		</p>
+
+		<p>
+		  <b>Stories:</b>
+		  <%= @plan.stories %>
+		</p>
+
+		<p>
+		  <b>Dining:</b>
+		  <%= @plan.dining %>
+		</p>
+
+		<p>
+		  <b>View:</b>
+		  <%= @plan.view %>
+		</p>
+		
+		<p>
+			<b>Secondary View:</b>
+			<%= link_to image_tag(@plan.drawing_2.url(:full)), @plan.drawing_2.url(:full), :popup=>[:full] %>
+		</p>
+		<p>
+			<b>Elevation View:</b>
+			<%= link_to image_tag(@plan.elevation.url(:full)), @plan.elevation.url(:full), :popup=>[:full] %>
+		</p>
+
+
+   
+  </div><!--/.well -->
+</div><!--/span-->
+
+
+
+
+<div class="buttons span12">
+<hr>
+
+<%= link_to 'Edit', edit_plan_path(@plan) %> |
+<%= link_to 'Back', plans_path %>
+	<br /><br />

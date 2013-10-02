@@ -1,0 +1,78 @@
+<%= form_for @plan, :html => { :multipart => true } do |f| %>
+  <% if @plan.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@plan.errors.count, "error") %> prohibited this plan from being saved:</h2>
+
+      <ul>
+      <% @plan.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :bedrooms %><br />
+    <%= f.number_field :bedrooms %>
+  </div>
+  <div class="field">
+    <%= f.label :sqfoot %><br />
+    <%= f.number_field :sqfoot %>
+  </div>
+  <div class="field">
+    <%= f.label :levels %><br />
+    <%= f.number_field :levels %>
+  </div>
+  <div class="field">
+    <%= f.label :bathrooms %><br />
+    <%= f.number_field :bathrooms %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br />
+    <%= f.text_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :half_bath %><br />
+    <%= f.number_field :half_bath %>
+  </div>
+  <div class="field">
+    <%= f.label :living %><br />
+    <%= f.number_field :living %>
+  </div>
+  <div class="field">
+    <%= f.label :suite %><br />
+    <%= f.text_field :suite %>
+  </div>
+  <div class="field">
+    <%= f.label :stories %><br />
+    <%= f.text_field :stories %>
+  </div>
+  <div class="field">
+    <%= f.label :dining %><br />
+    <%= f.number_field :dining %>
+  </div>
+  <div class="field">
+    <%= f.label :view %><br />
+    <%= f.text_field :view %>
+  </div>
+
+  <div class="control-group">
+	   <%= f.label :drawing_1, "Upload Primary Plan PDF", :class => 'control-label' %>
+<%= f.file_field :drawing_1 %>
+  </div>
+  <div class="control-group">
+	   <%= f.label :drawing_2, "Upload SecondaryPlan PDF (optional)", :class => 'control-label' %>
+<%= f.file_field :drawing_2 %>
+  </div>
+  <div class="control-group">
+	   <%= f.label :elevation, "Upload Elevation PDF", :class => 'control-label' %>
+<%= f.file_field :elevation %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
