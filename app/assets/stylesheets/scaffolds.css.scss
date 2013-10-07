@@ -1,23 +1,30 @@
 
 body {
   background-color: #fff;
-  background-image: url("blueprint3.png");
+  background-image: url("blueprint5.png");
+  background-repeat:no-repeat;
+  background-attachment:fixed;
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
 }
 
-
-.row {
+.content {
+background: transparent;
 margin-top: 75px;
 }
 
+.btn {
+color: #fff !important;
+box-shadow: 5px 5px 5px #888888 !important;
+margin-top: 15px !important;
+}
 
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
+  font-size: 15px;
+  line-height: 19px;
 }
 
 pre {
@@ -33,7 +40,7 @@ a {
   }
   &:hover {
     color: #fff;
-    background-color: #000;
+    background-color: #efefef;
   }
 }
 
@@ -41,6 +48,43 @@ div {
   &.field, &.actions {
     margin-bottom: 10px;
   }
+}
+
+/* footer */
+
+footer {
+margin-right: 10px;
+margin-left: 10px;
+border-top: 1px solid #800000;
+}
+
+footer a {
+  color: #555 !important;
+}  
+
+footer a:hover { 
+  color: #222 !important;
+}
+
+footer small {
+  float: left;
+padding: 5px;
+
+}
+footer menu {
+padding: 5px;
+}
+
+footer ul {
+margin-top: -15px;
+  float: right;
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 10px;
+  font-size: 125%;
 }
 
 #notice {
@@ -71,6 +115,7 @@ div {
     color: #fff;
   }
   ul li {
+    font: #fff;
     font-size: 12px;
     list-style: square;
   }

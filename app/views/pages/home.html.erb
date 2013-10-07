@@ -1,13 +1,102 @@
-<h1>Pages#home:string</h1>
-<p>Find me in app/views/pages/home:string.html.erb</p>
- <div class="span3">
-    <div class="well sidebar-nav">
-      <h3>Sidebar</h3>
-      <ul class="nav nav-list">
-        <li class="nav-header">Sidebar</li>
-        <li><%= link_to "Link1", "/path1"  %></li>
-        <li><%= link_to "Link2", "/path2"  %></li>
-        <li><%= link_to "Link3", "/path3"  %></li>
-      </ul>
-    </div><!--/.well -->
-  </div><!--/span-->
+
+<div class="logob span12">
+	</div>
+<div class="logo span12">
+<seo>
+	<%= image_tag("twitter.png", :align => 'right') %>
+	<%= image_tag("facebook.png", :align => 'right') %>
+	<%= image_tag("linkedin.png", :align => 'right') %>
+</seo>
+	<%= image_tag("eplanbookheader2.png") %><br /><br /><br />
+	</div>
+
+<div class="home-top span4">
+<center><h3>Find Your Home Here!</h3></center><br />
+
+<%= search_form_for @q do |f| %>
+
+<%= f.label :sqfoot_gteq, "Square Footage Min" %>
+<%= f.text_field :sqfoot_gteq %>
+<%= f.label :sqfoot_lteq, "Square Footage Max" %>
+<%= f.text_field :sqfoot_lteq %>
+
+<%= f.label :bedrooms_eq, "Bedrooms" %>
+<%= f.select :bedrooms_eq, options_for_select([[''],['1', 1], ['2', 2],['3', 3],['4', 4]]), :class => 'select_field' %>
+
+  <%= f.label :bathrooms_eq, "Bathrooms" %>
+<%= f.select :bathrooms_eq, options_for_select([[''],['1', 1], ['2', 2],['3', 3],['4', 4]]), :class => 'select_field' %>
+
+<%= f.label :stories_eq, "Levels" %>
+<%= f.select :stories_eq, options_for_select([[''],['Single-Story', 1], ['Multi-Story', 2]]), :class => 'select_field' %>
+ 
+<br />
+<p><%= f.submit class: "btn btn-large btn-primary" %> 
+	<%= link_to "More Options", plans_path, class: "btn btn-large btn-primary" %>
+</p>
+
+
+<% end %>
+
+</div>
+
+<div class="popular span7">
+<center><h3>Check Out Some of Our Most Popular Plans</h3></center>
+
+
+<div class="pic span2">
+<%= image_tag("Hamilton.jpg") %>
+</div>
+<div class="pic span2">
+<%= image_tag("Hamilton.jpg") %>
+</div>
+<div class="pic span2">
+<%= image_tag("Hamilton.jpg") %>
+</div>
+<div class="pic span2">
+<%= image_tag("Hamilton.jpg") %>
+</div>
+<div class="pic span2">
+<%= image_tag("Hamilton.jpg") %>
+</div>
+<div class="pic span2">
+<%= image_tag("Hamilton.jpg") %>
+</div>
+<div class="pic span2">
+<%= image_tag("Hamilton.jpg") %>
+</div>
+<div class="pic span2">
+<%= image_tag("Hamilton.jpg") %>
+</div>
+<div class="pic span2">
+<%= image_tag("Hamilton.jpg") %><br /><br /><br />
+</div>
+
+</div>
+
+<div class="about span12">
+	
+	<center><h3>Presented by Venture Four Architects</h3></center> 
+	<br />
+	<br />
+	<p>
+		<b><%= link_to "Venture Four Architects", "#" %></b> was founded in 1990 as a full service Austin architectural firm.  The firm has produced over 800 residences and a variety of commercial building designs in Austin.  The principals contribute over fifty years experience in design, planning,  graphic production and construction management
+	</p>
+<br />		
+	<p>
+		We are a small, energetic, hands-on, architectural firm. Our projects are defined by responsive design and attention to detail. With open-minded principles and adaptable methods, we have produced a wide variety of custom and speculative residences as well as light commercial buildings.
+	</p><br /><br /><br />
+		
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+

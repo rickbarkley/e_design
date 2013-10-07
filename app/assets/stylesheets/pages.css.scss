@@ -1,3 +1,69 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.logob {
+margin-top: 65px;
+position: absolute;
+border-top: 4px solid #800000;
+}
+
+.logo seo img {
+padding: 10px;
+}
+.home-top-right img {
+
+box-shadow: 5px 5px 5px #888888 !important;
+margin-bottom: 30px;
+
+
+-webkit-border-radius: 6px 6px 6px 6px;
+ -moz-border-radius: 6px 6px 6px 6px;
+ border-radius: 6px 6px 6px 6px;
+}
+
+.home-top img {
+box-shadow: 5px 5px 5px #000 !important;
+margin-bottom: 30px;
+-webkit-border-radius: 6px 6px 6px 6px;
+ -moz-border-radius: 6px 6px 6px 6px;
+ border-radius: 6px 6px 6px 6px;
+}
+
+.well {
+
+box-shadow: 5px 5px 5px #888888 !important;
+margin-bottom: 30px;
+-webkit-border-radius: 6px 6px 6px 6px;
+ -moz-border-radius: 6px 6px 6px 6px;
+ border-radius: 6px 6px 6px 6px;
+}
+
+.field .text_field{
+width: 2em;
+}
+.text_field {
+width: 2em;
+}
+
+.pic img {
+border: 1px solid #000;
+box-shadow: 5px 5px 5px #000 !important;
+margin-bottom: 20px;
+-webkit-border-radius: 6px 6px 6px 6px;
+ -moz-border-radius: 6px 6px 6px 6px;
+ border-radius: 6px 6px 6px 6px;
+}
+
+.btn btn-large btn-primary{
+font: #fff !important;
+}
+.about {
+background: #efefef;
+margin-bottom: 20px;
+padding: 10px;
+box-shadow: 5px 5px 5px #888888 !important;
+margin-bottom: 30px;
+-webkit-border-radius: 6px 6px 6px 6px;
+ -moz-border-radius: 6px 6px 6px 6px;
+ border-radius: 6px 6px 6px 6px;
+}

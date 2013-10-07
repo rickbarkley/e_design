@@ -3,10 +3,19 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .border {
-border-top: 2px solid #888;
+border-top: 2px solid #800000;
+margin-left: -5px;
+align: center;
 }
 .image img {
-
+box-shadow: 5px 5px 5px #000000 !important;
 position: relative;
-padding: 10px;
+
+margin-right: 20px;
+margin-top: 10px;
+margin-bottom: 10px;
+-webkit-border-radius: 6px 6px 6px 6px;
+ -moz-border-radius: 6px 6px 6px 6px;
+ border-radius: 6px 6px 6px 6px;
 }
+
