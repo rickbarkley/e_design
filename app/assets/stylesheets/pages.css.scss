@@ -8,7 +8,15 @@ border-top: 4px solid #800000;
 }
 
 .logo seo img {
-padding: 10px;
+margin: 10px;
+
+}
+
+.logo img {
+-webkit-border-radius: 6px 6px 6px 6px;
+ -moz-border-radius: 6px 6px 6px 6px;
+ border-radius: 6px 6px 6px 6px;
+box-shadow: 5px 5px 5px #383838 !important;
 }
 .home-top-right img {
 
@@ -46,7 +54,7 @@ width: 2em;
 }
 
 .pic img {
-border: 1px solid #000;
+
 box-shadow: 5px 5px 5px #000 !important;
 margin-bottom: 20px;
 -webkit-border-radius: 6px 6px 6px 6px;
@@ -61,9 +69,17 @@ font: #fff !important;
 background: #efefef;
 margin-bottom: 20px;
 padding: 10px;
-box-shadow: 5px 5px 5px #888888 !important;
+box-shadow: 5px 5px 5px #383838 !important;
 margin-bottom: 30px;
 -webkit-border-radius: 6px 6px 6px 6px;
  -moz-border-radius: 6px 6px 6px 6px;
  border-radius: 6px 6px 6px 6px;
+}
+
+.about img {
+padding: 10px;
+-webkit-border-radius: 6px 6px 6px 6px;
+ -moz-border-radius: 6px 6px 6px 6px;
+ border-radius: 6px 6px 6px 6px;
+
 }
