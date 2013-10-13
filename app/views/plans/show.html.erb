@@ -1,3 +1,5 @@
+
+
 <p id="notice"><%= notice %></p>
 
 <center><h1>Plan View | <%= @plan.name %></h1></center>
@@ -5,7 +7,7 @@
 <div class="plan span8">
 	
 
-<center><%= link_to image_tag(@plan.drawing_1.url(:full)), @plan.drawing_1.url(:original), :popup=>[:original] %></center>
+<center><%= link_to image_tag(@plan.drawing_1.url(:full)), @plan.drawing_1.url(:full), class: "lightbox_trigger" %></center>
 <br /><br />
 <center><h3><%= link_to "click to Purchase" , "#" %></h3></center>
 
@@ -74,22 +76,74 @@
 		<p>
 		  <b>View:</b>
 		  <%= @plan.view %>
-		</p>
-		
+		</p>		
 		<p>
 			<b>Secondary View:</b>
-			<%= link_to image_tag(@plan.drawing_2.url(:full)), @plan.drawing_2.url(:full), :popup=>[:full] %>
+			<%= link_to image_tag(@plan.drawing_2.url(:full)), @plan.drawing_2.url(:full), class: "lightbox_trigger" %>
 		</p>
+
 		<p>
 			<b>Elevation View:</b>
-			<%= link_to image_tag(@plan.elevation.url(:full)), @plan.elevation.url(:full), :popup=>[:full] %>
+			<%= link_to image_tag(@plan.elevation.url(:full)), @plan.elevation.url(:full), class: "lightbox_trigger" %>
 		</p>
 
 
    
   </div><!--/.well -->
 </div><!--/span-->
+<script src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
+<script>
+jQuery(document).ready(function($) {
+	
+	$('.lightbox_trigger').click(function(e) {
+		
+		//prevent default action (hyperlink)
+		e.preventDefault();
+		
+		//Get clicked link href
+		var image_href = $(this).attr("href");
+		
+		/* 	
+		If the lightbox window HTML already exists in document, 
+		change the img src to to match the href of whatever link was clicked
+		
+		If the lightbox window HTML doesn't exists, create it and insert it.
+		(This will only happen the first time around)
+		*/
+	//adding if statement causes isses with link if hit a second time!!	
+	/*if ($('.lightbox').length > 0) { // #lightbox exists
+			
+			//place href as img src value
+			$('.content').html('<img src="' + image_href + '" />');
+		   	
+			//show lightbox window - you could use .show('fast') for a transition
+			$('.lightbox').show();
+		}
+		
+		else { //#lightbox does not exist - create and insert (runs 1st time only)
+			
+			//create HTML markup for lightbox window*/
+			var lightbox = 
+			'<div class="lightbox">' +
+				'<p>Click to close</p>' +
+				'<div class="content">' + //insert clicked link's href into img src
+					'<img src="' + image_href +'" />' +
+				'</div>' +	
+			'</div>';
+				
+			//insert lightbox HTML into page
+			$('body').append(lightbox);
+		//}
+		
+	});
+	
+	//Click anywhere on the page to get rid of lightbox window
+	$('.lightbox').live('click', function() { //must use live, as the lightbox element is inserted into the DOM
+		$('.lightbox').hide();
+	});
 
+});
+</script>
 
 
 
