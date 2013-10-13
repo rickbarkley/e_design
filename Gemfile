@@ -13,8 +13,8 @@ gem "devise"
 gem "cancan"
 gem "wicked_pdf"
 gem "rmagick"
-
 gem "ransack"
+gem 'rolify'
 
 
 # Gems used only for assets and not required

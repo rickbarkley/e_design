@@ -4,10 +4,18 @@
     <li>
     <%= link_to 'View Plans', plans_path %>
     </li>
+<% if user_signed_in? %>
+	<li>
+	<%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %>
+	</li>
+	<% else %>
    <li>
     <%= link_to 'Login', new_user_session_path %> 
     </li>
-
+    <li>
+    <%= link_to 'Sign up', new_user_registration_path %>
+    </li>
+<% end %>
 </ul>
 <form class="navbar-search pull-right">
   <input type="text" class="search-query" placeholder="Search for Plans">

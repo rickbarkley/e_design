@@ -52,36 +52,35 @@ div {
 
 /* footer */
 
-footer {
-margin-right: 10px;
-margin-left: 10px;
-border-top: 1px solid #800000;
+.footer {
+margin-left: -10px;
+padding: 10px;
+border-top: 2px solid #800000;
 }
 
-footer a {
+.footer a {
   color: #555 !important;
 }  
 
-footer a:hover { 
+.footer a:hover { 
   color: #222 !important;
 }
 
-footer small {
+.footer small {
   float: left;
-padding: 5px;
 
 }
-footer menu {
+.footer menu {
 padding: 5px;
 }
 
-footer ul {
+.footer ul {
 margin-top: -15px;
   float: right;
   list-style: none;
 }
 
-footer ul li {
+.footer ul li {
   float: left;
   margin-left: 10px;
   font-size: 125%;

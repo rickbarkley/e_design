@@ -3,13 +3,13 @@
 <p id="notice"><%= notice %></p>
 
 <center><h1>Plan View | <%= @plan.name %></h1></center>
-<hr>
+<br /><br />
 <div class="plan span8">
 	
 
 <center><%= link_to image_tag(@plan.drawing_1.url(:full)), @plan.drawing_1.url(:full), class: "lightbox_trigger" %></center>
 <br /><br />
-<center><h3><%= link_to "click to Purchase" , "#" %></h3></center>
+<center><%= link_to "Click to Purchase!" , "#", class: "btn btn-large btn-primary"   %></center>
 
 	</div>
 	
@@ -19,33 +19,20 @@
 
 	<dl class="dl-horizontal">
 		<p>
-		  <b>Bedrooms:</b>
-		  <%= @plan.bedrooms %>
+		  <b>Name:</b>
+		  <%= @plan.name %>
 		</p>
-
 		<p>
 		  <b>Sqfoot:</b>
 		  <%= @plan.sqfoot %>
 		</p>
-
 		<p>
-		  <b>Levels:</b>
-		  <%= @plan.levels %>
+		  <b>Bedrooms:</b>
+		  <%= @plan.bedrooms %>
 		</p>
-
 		<p>
 		  <b>Bathrooms:</b>
 		  <%= @plan.bathrooms %>
-		</p>
-
-		<p>
-		  <b>Price:</b>
-		  <%= @plan.price %>
-		</p>
-
-		<p>
-		  <b>Name:</b>
-		  <%= @plan.name %>
 		</p>
 
 		<p>
@@ -57,26 +44,18 @@
 		  <b>Living:</b>
 		  <%= @plan.living %>
 		</p>
-
-		<p>
-		  <b>Suite:</b>
-		  <%= @plan.suite %>
-		</p>
-
-		<p>
-		  <b>Stories:</b>
-		  <%= @plan.stories %>
-		</p>
-
 		<p>
 		  <b>Dining:</b>
 		  <%= @plan.dining %>
 		</p>
-
 		<p>
-		  <b>View:</b>
-		  <%= @plan.view %>
-		</p>		
+		  <b>Levels:</b>
+		  <%= @plan.stories %>
+		</p>
+		<p>
+		  <b>Price:</b>
+		  <%= @plan.price %>
+		</p>				
 		<p>
 			<b>Secondary View:</b>
 			<%= link_to image_tag(@plan.drawing_2.url(:full)), @plan.drawing_2.url(:full), class: "lightbox_trigger" %>
@@ -148,8 +127,11 @@ jQuery(document).ready(function($) {
 
 
 <div class="buttons span12">
-<hr>
 
-<%= link_to 'Edit', edit_plan_path(@plan) %> |
-<%= link_to 'Back', plans_path %>
+	<% if user_signed_in? %>
+	<% if current_user.has_role? :admin %>
+<%= link_to 'Edit', edit_plan_path(@plan), class: "btn btn-large btn-primary" %> |
+<% end %>
+<% end %>
+<%= link_to 'Back', plans_path, class: "btn btn-large btn-primary" %>
 	<br /><br />

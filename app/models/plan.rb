@@ -32,7 +32,7 @@
 #
 
 class Plan < ActiveRecord::Base
-  attr_accessible :bathrooms, :bedrooms, :dining, :half_bath, :levels, :living, :name, :price, :sqfoot, :stories, :suite, :view,
+  attr_accessible :garage, :bathrooms, :bedrooms, :dining, :half_bath, :levels, :living, :name, :price, :sqfoot, :stories, :suite, :view,
   :drawing_1_file_name, :drawing_1_content_type, :drawing_1_file_size, :drawing_1_updated_at, :drawing_2_file_name, :drawing_2_content_type,
   :drawing_2_file_size, :drawing_2_updated_at, :elevation_file_name, :elevation_content_type, :elevation_file_size, :elevation_updated_at,
   :drawing_1, :drawing_2, :elevation 

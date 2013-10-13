@@ -1,4 +1,5 @@
 class PlansController < ApplicationController
+
   # GET /plans
   # GET /plans.json
   def index
@@ -25,6 +26,7 @@ class PlansController < ApplicationController
   # GET /plans/new
   # GET /plans/new.json
   def new
+    authorize! :new, @user, :message => 'Not authorized as an administrator.'
     @plan = Plan.new
 
 
@@ -36,12 +38,14 @@ class PlansController < ApplicationController
 
   # GET /plans/1/edit
   def edit
+    authorize! :edit, @user, :message => 'Not authorized as an administrator.'
     @plan = Plan.find(params[:id])
   end
 
   # POST /plans
   # POST /plans.json
   def create
+    authorize! :create, @user, :message => 'Not authorized as an administrator.'
     @plan = Plan.new(params[:plan])
 
     respond_to do |format|
@@ -58,6 +62,7 @@ class PlansController < ApplicationController
   # PUT /plans/1
   # PUT /plans/1.json
   def update
+    authorize! :update, @user, :message => 'Not authorized as an administrator.'
     @plan = Plan.find(params[:id])
 
     respond_to do |format|
@@ -74,6 +79,7 @@ class PlansController < ApplicationController
   # DELETE /plans/1
   # DELETE /plans/1.json
   def destroy
+    authorize! :destroy, @user, :message => 'Not authorized as an administrator.'
     @plan = Plan.find(params[:id])
     @plan.destroy
 
