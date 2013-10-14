@@ -12,7 +12,6 @@ gem "aws-sdk"
 gem "devise"
 gem "cancan"
 gem "wicked_pdf"
-gem "rmagick"
 gem "ransack"
 gem 'rolify'
 
