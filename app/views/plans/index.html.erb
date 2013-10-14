@@ -1,7 +1,8 @@
 <h2>Advanced Plan Search</h2><br />
+
 <div class="border span12"><p></div><br /><br />
 
-
+<%= will_paginate @plans %>
 <%= search_form_for @q do |f| %>
 <div class="field span3">
 <%= f.label :sqfoot_gteq, "Square Footage Min" %>
@@ -70,7 +71,7 @@
 </div>
 <% end %>
 
-
+<%= will_paginate @plans %>
 <br />
 <% if user_signed_in? %>
 <% if current_user.has_role? :admin %>

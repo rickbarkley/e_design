@@ -15,6 +15,7 @@ gem "wicked_pdf"
 gem "rmagick"
 gem "ransack"
 gem 'rolify'
+gem "will_paginate", "~> 3.0.4"
 
 
 # Gems used only for assets and not required
