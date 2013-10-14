@@ -2,7 +2,7 @@
 
 <div class="border span12"><p></div><br /><br />
 
-<%= will_paginate @plans %>
+
 <%= search_form_for @q do |f| %>
 <div class="field span3">
 <%= f.label :sqfoot_gteq, "Square Footage Min" %>
@@ -45,9 +45,10 @@
 <% end %>
 
 
-<div class="border span12"><p></p></div>
-
-
+<div class="border span12"><p></p><br /></div>
+<div class="page span12">
+<%= will_paginate @plans %>
+</div>
     <% @plans.each do |plan| %>
 <div class="image span5">
 <%= link_to image_tag(plan.elevation.url(:full)), plan_path(plan) %>
@@ -70,8 +71,9 @@
 
 </div>
 <% end %>
-
+<div class="page span12">
 <%= will_paginate @plans %>
+</div>
 <br />
 <% if user_signed_in? %>
 <% if current_user.has_role? :admin %>
