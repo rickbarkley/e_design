@@ -1,38 +1,41 @@
 
-<div class="logob span12">
+<div class="logob span11">
 	</div>
-<div class="logo span12">
-<seo>
+
+<div class="logo span8">
+		<%= image_tag("eplanbookheader2.png") %><br /><br /><br />
+		</div>
+<div class="seo span2">
+
 	<%= link_to image_tag("twitter.png", :align => 'right'), "https://twitter.com/" %>
 	<%= link_to image_tag("facebook.png", :align => 'right'), "https://www.facebook.com/pages/Venture-Four-Architects-Inc/104407431124" %>
 	<%= link_to image_tag("linkedin.png", :align => 'right'), "http://www.linkedin.com/" %>
-</seo>
-	<%= image_tag("eplanbookheader2.png") %><br /><br /><br />
-	</div>
+</div>
+
 
 <div class="home-top span4">
 <center><h3>Find Your Next Custom Home Here!</h3></center><br />
 
 <%= search_form_for @q do |f| %>
 
-<%= f.label :sqfoot_gteq, "Square Footage Min" %>
-<%= f.text_field :sqfoot_gteq %>
-<%= f.label :sqfoot_lteq, "Square Footage Max" %>
-<%= f.text_field :sqfoot_lteq %>
-
-<%= f.label :bedrooms_eq, "Bedrooms" %>
-<%= f.select :bedrooms_eq, options_for_select([[''],['1', 1], ['2', 2],['3', 3],['4', 4]]), :class => 'select_field' %>
-
-  <%= f.label :bathrooms_eq, "Bathrooms" %>
-<%= f.select :bathrooms_eq, options_for_select([[''],['1', 1], ['2', 2],['3', 3],['4', 4]]), :class => 'select_field' %>
-
-<%= f.label :stories_eq, "Levels" %>
-<%= f.select :stories_eq, options_for_select([[''],['Single-Story', 1], ['Multi-Story', 2]]), :class => 'select_field' %>
- 
 <br />
-<p><%= f.submit class: "btn btn-large btn-primary" %> 
+<b>Square Footage Min: </b><center><%= f.text_field :sqfoot_gteq %></center>
+<br />
+<b>Square Footage Max: </b><center><%= f.text_field :sqfoot_lteq %></center>
+
+<br />
+<b>Number of Bedrooms: </b><center><%= f.select :bedrooms_eq, options_for_select([[''],['1', 1], ['2', 2],['3', 3],['4', 4]]), :class => 'select_field' %></center>
+
+<br />
+<b>Number of Bathrooms: </b><center><%= f.select :bathrooms_eq, options_for_select([[''],['1', 1], ['2', 2],['3', 3],['4', 4]]), :class => 'select_field' %></center>
+
+<br />
+<b>Number of Stories:  </b><center><%= f.select :stories_eq, options_for_select([[''],['Single-Story', 1], ['Multi-Story', 2]]), :class => 'select_field' %></center>
+ 
+<br /><br />
+<center><p><%= f.submit class: "btn btn-large btn-primary" %> 
 	<%= link_to "More Options", plans_path, class: "btn btn-large btn-primary" %>
-</p>
+</p></center>
 
 
 <% end %>
@@ -40,37 +43,38 @@
 </div>
 
 <div class="popular span7">
-<center><h3>Choose From Some of Our Most Popular Plans</h3></center><br />
+<h3>Choose From Some of Our Most Popular Plans</h3><br />
 
 
 
-<div class="pic span2">
+<div class="pic span3">
 <%= image_tag("Hamilton.jpg") %>
 </div>
-<div class="pic span2">
-<%= image_tag("thumbs_front.jpg") %>
+<div class="pic span3">
+<%= image_tag("thumbs_front2.jpg") %>
 </div>
 
-<div class="pic span2">
-<%= image_tag("TexMed-Courtyard-150x150.jpg") %>
+<div class="pic span3">
+<%= image_tag("TexMed-Courtyard-150x1502.jpg") %>
 </div>
-<div class="pic span2">
-<%= link_to image_tag("http://edesign.nuvola-networks.com/system/plans/elevations/000/000/025/full/1202-elev.jpg?1381712472"), "http://edesign.nuvola-networks.com/plans/25" %>
+
+<div class="pic span3">
+<%= image_tag("front_pool2.jpg") %>
 </div>
-<div class="pic span2">
-<%= image_tag("front_pool.png") %>
+<div class="pic span3">
+<%= link_to image_tag("3956plan.jpg"), "http://edesign.nuvola-networks.com/plans/22" %>
 </div>
-<div class="pic span2">
-<%= link_to image_tag("http://edesign.nuvola-networks.com/system/plans/elevations/000/000/026/full/1208-elevation.jpg?1381714481"), "http://edesign.nuvola-networks.com/plans/26" %>
+<div class="pic span3">
+<%= image_tag("IMG_1354-Medium1-150x1502.jpg") %>
 </div>
-<div class="pic span2">
-<%= image_tag("IMG_1354-Medium1-150x150.jpg") %>
+<div class="pic span3">
+<%= link_to image_tag("1202-elev.jpg"), "http://edesign.nuvola-networks.com/plans/25" %>
 </div>
-<div class="pic span2">
-<%= link_to image_tag("http://edesign.nuvola-networks.com/system/plans/drawing_1s/000/000/022/full/3956plan_0.jpg?1381708060"), "http://edesign.nuvola-networks.com/plans/22" %>
+<div class="pic span3">
+<%= image_tag("thumbs_dsc_1245-zf-1276-28058-1-003_02.jpg") %><br /><br /><br />
 </div>
-<div class="pic span2">
-<%= image_tag("thumbs_dsc_1245-zf-1276-28058-1-003_0.jpg") %><br /><br /><br />
+<div class="pic span3">
+<%= link_to image_tag("1208-elevation.jpg"), "http://edesign.nuvola-networks.com/plans/26" %><br /><br /><br /><br />
 </div>
 </div>
 
