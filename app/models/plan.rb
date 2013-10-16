@@ -36,9 +36,9 @@ class Plan < ActiveRecord::Base
   :drawing_1_file_name, :drawing_1_content_type, :drawing_1_file_size, :drawing_1_updated_at, :drawing_2_file_name, :drawing_2_content_type,
   :drawing_2_file_size, :drawing_2_updated_at, :elevation_file_name, :elevation_content_type, :elevation_file_size, :elevation_updated_at,
   :drawing_1, :drawing_2, :elevation 
-  has_attached_file :drawing_1,  :styles => { :full => ["2000x2000>", :jpg], :preview => ["365x365>", :jpg], :thumb => ["100x140>", :jpg] }
-  has_attached_file :drawing_2,  :styles => { :full => ["2000x2000>", :jpg], :preview => ["365x365>", :jpg], :thumb => ["100x140>", :jpg] }
-  has_attached_file :elevation,  :styles => { :full => ["2000x2000>", :jpg], :preview => ["365x365>", :jpg], :thumb => ["100x140>", :jpg] }
+  has_attached_file :drawing_1,  :styles => { :full => ["2400x2400>", :jpg], :preview => ["365x365>", :jpg], :thumb => ["150x150>", :jpg] }
+  has_attached_file :drawing_2,  :styles => { :full => ["2400x2400>", :jpg], :preview => ["365x365>", :jpg], :thumb => ["150x150>", :jpg] }
+  has_attached_file :elevation,  :styles => { :full => ["2400x2400>", :jpg], :preview => ["365x365>", :jpg], :thumb => ["150x150>", :jpg] }
                    
 
 end
