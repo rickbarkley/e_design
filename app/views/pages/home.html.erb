@@ -18,18 +18,18 @@
 
 <%= search_form_for @q do |f| %>
 
-<br />
+
 <b>Square Footage Min: </b><center><%= f.text_field :sqfoot_gteq %></center>
-<br />
+
 <b>Square Footage Max: </b><center><%= f.text_field :sqfoot_lteq %></center>
 
-<br />
+
 <b>Number of Bedrooms: </b><center><%= f.select :bedrooms_eq, options_for_select([[''],['1', 1], ['2', 2],['3', 3],['4', 4]]), :class => 'select_field' %></center>
 
-<br />
+
 <b>Number of Bathrooms: </b><center><%= f.select :bathrooms_eq, options_for_select([[''],['1', 1], ['2', 2],['3', 3],['4', 4]]), :class => 'select_field' %></center>
 
-<br />
+
 <b>Number of Stories:  </b><center><%= f.select :stories_eq, options_for_select([[''],['Single-Story', 1], ['Multi-Story', 2]]), :class => 'select_field' %></center>
  
 <br /><br />
