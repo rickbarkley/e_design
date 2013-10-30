@@ -21,11 +21,15 @@
   </div>
   <div class="field">
     <%= f.label :bedrooms %><br />
-    <%= f.select :bedrooms, options_for_select([[''],['1', 1], ['2', 2],['3', 3],['4', 4],['5', 5],['6+', 6]]), :class => 'select_field' %>
+    <%= f.select(:bedrooms, [['1', 1], ['2', 2],['3', 3],['4', 4],['5', 5],['6+', 6]],{ :prompt => "Not Sure"}) %>
   </div>
   <div class="field">
     <%= f.label :bathrooms %><br />
-    <%= f.select :bathrooms, options_for_select([[''],['1', 1], ['2', 2],['3', 3],['4+', 4]]), :class => 'select_field' %>
+    <%= f.select(:bathrooms, [['1', 1], ['2', 2],['3', 3],['4', 4],['5', 5],['6+', 6]],{ :prompt => "Not Sure"}) %>
+  </div>
+  <div class="field">
+    <%= f.label :depth %><br />
+    <%= f.text_field :depth %>
   </div>
 </div>
 <div class="row-two span3">
@@ -35,29 +39,37 @@
   </div>
   <div class="field">
     <%= f.label :living %><br />
-    <%= f.select :living, options_for_select([[''],['1', 1], ['2', 2],['3', 3],['4+', 4]]), :class => 'select_field' %>
+    <%= f.select(:living, [['1', 1], ['2', 2],['3', 3],['4+', 4]],{ :prompt => "Not Sure"}) %>
   </div>
   <div class="field">
     <%= f.label :dining %><br />
-    <%= f.select :dining, options_for_select([[''],['1', 1], ['2', 2],['3', 3],['4+', 4]]), :class => 'select_field' %>
+    <%= f.select(:dining, [['1', 1], ['2', 2],['3', 3],['4+', 4]],{ :prompt => "Not Sure"}) %>
   </div>
   <div class="field">
-	<%= f.label :garage, "Number of Garages" %>
-	<%= f.select :garage, options_for_select([[''],['0', 1],['1', 2], ['2', 3],['3', 4],['4+', 5]]), :class => 'select_field' %>
+	<%= f.label :garage, "Number of Garages" %><br />
+	<%= f.select(:garage, [['0', 1],['1', 2], ['2', 3],['3', 4],['4+', 5]],{ :prompt => "Not Sure"}) %>
 	</div>
-	</div>
+	<div class="field">
+    <%= f.label :width %><br />
+    <%= f.text_field :width %>
+  	</div>
+</div>
 	<div class="row-three span3">
   <div class="field">
     <%= f.label :stories, "Levels" %><br />
-    <%= f.select :stories, options_for_select([[''],['Single-Story', 1], ['Multi-Story', 2]]), :class => 'select_field' %>
+    <%= f.select(:stories, [['Single-Story', 1], ['Multi-Story', 2],['Upside-Down', 3],['Walk Out basement', 4]],{ :prompt => "Not Sure"}) %>
   </div>
   <div class="field">
     <%= f.label :suite, "Owner's Suite Location" %><br />
-    <%= f.select :suite, options_for_select([[''], ['Primary Level', 2],['Secondary Level', 3]]), :class => 'select_field'   %>
+    <%= f.select(:suite, [['Primary Level', 2],['Secondary Level', 3]],{ :prompt => "Not Sure"}) %>
+  </div>
+  <div class="field">
+    <%= f.label :view, "View" %><br />
+    <%= f.select(:view, [['Front View 1st Floor', 1], ['Front View 2nd Floor', 2],['Rear View 1st Floor', 3],['Rear View 2nd Floor', 4]],{ :prompt => "Not Sure"}) %>
   </div>
   <div class="field">
     <%= f.label :price %><br />
-    <%= f.text_field :price %>
+    <%= f.select(:price, [['.75', 1],['.90', 2],['1.05', 3],['1.20', 4]]) %>
   </div>
 </div>
 <div class="row-four span2">

@@ -15,11 +15,12 @@
 	
 
 <div class="well span2">
-
+		<% unless @plan.name.blank? %>
 		<p>
 		  <b>Name:</b>
 		  <%= @plan.name %>
 		</p>
+		<% end %>
 		<p>
 		  <b>Sqfoot:</b>
 		  <%= @plan.sqfoot %>
@@ -32,11 +33,12 @@
 		  <b>Bathrooms:</b>
 		  <%= @plan.bathrooms %>
 		</p>
-
+			<% unless @plan.half_bath.blank? %>
 		<p>
 		  <b>Half bath:</b>
 		  <%= @plan.half_bath %>
 		</p>
+			<% end %>
 
 		<p>
 		  <b>Living:</b>
@@ -50,10 +52,35 @@
 		  <b>Levels:</b>
 		  <%= @plan.stories %>
 		</p>
+		<% unless @plan.view.blank? %>
+		<p>
+		  <b>view:</b>
+		  <%= @plan.view %>
+		</p>
+		<% end %>
+		<% unless @plan.width.blank? %>
+		<p>
+		  <b>Width:</b>
+		  <%= @plan.width %>
+		</p>
+		<% end %>
+		<% unless @plan.depth.blank? %>
+		<p>
+		  <b>Depth:</b>
+		  <%= @plan.depth %>
+		</p>
+		<% end %>
+		<% if @plan.price.blank? %>
+		<p>
+		<b>Price:</b>
+		$ <%= (0.75 * @plan.sqfoot).to_i %>
+		</p>
+		<% else %>
 		<p>
 		  <b>Price:</b>
-		  <%= @plan.price %>
-		</p>				
+		 $ <%= (@plan.price * @plan.sqfoot).to_i %>
+		</p>
+		<% end %>				
 		<p>
 			<b>Secondary View:</b>
 			<%= link_to image_tag(@plan.drawing_2.url(:full)), @plan.drawing_2.url(:full), class: "lightbox_trigger" %>
@@ -125,11 +152,14 @@ jQuery(document).ready(function($) {
 
 
 <div class="buttons span12">
-
+	<back>
+	<p><INPUT Type="button" VALUE="Back To Search" onClick="history.go(-1);return true;"></p>
+	</back>
 	<% if user_signed_in? %>
 	<% if current_user.has_role? :admin %>
-<%= link_to 'Edit', edit_plan_path(@plan), class: "btn btn-large btn-primary" %> |
+<%= link_to 'Edit', edit_plan_path(@plan), class: "btn btn-large btn-primary" %> <br />
 <% end %>
 <% end %>
-<%= link_to 'Back', plans_path, class: "btn btn-large btn-primary" %>
-	<br /><br />
+
+	<br /><br /><br /><br />
+</div>

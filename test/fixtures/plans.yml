@@ -29,6 +29,9 @@
 #  elevation_content_type :string(255)
 #  elevation_file_size    :integer
 #  elevation_updated_at   :datetime
+#  garage                 :integer
+#  width                  :string(255)
+#  depth                  :string(255)
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
