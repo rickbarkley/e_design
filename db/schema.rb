@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131013211631) do
+ActiveRecord::Schema.define(:version => 20131030154244) do
 
   create_table "plans", :force => true do |t|
     t.integer  "bedrooms"
@@ -41,6 +41,8 @@ ActiveRecord::Schema.define(:version => 20131013211631) do
     t.integer  "elevation_file_size"
     t.datetime "elevation_updated_at"
     t.integer  "garage"
+    t.string   "width"
+    t.string   "depth"
   end
 
   create_table "roles", :force => true do |t|
