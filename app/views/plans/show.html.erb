@@ -1,20 +1,28 @@
 
 
 <p id="notice"><%= notice %></p>
-
+<% if @plan.name.blank? %>
+<center><h1>Plan View</h1></center>
+<% else %>
 <center><h1>Plan View | <%= @plan.name %></h1></center>
+<% end %>
 <br /><br />
 <div class="plan span9">
 	
 
 <center><%= link_to image_tag(@plan.drawing_1.url(:full)), @plan.drawing_1.url(:full), class: "lightbox_trigger" %></center>
 <br /><br />
-<center><%= link_to "Click to Purchase!" , "#", class: "btn btn-large btn-primary"   %></center>
+<% if @plan.price.blank? %>
+<center><h3>Price: $<%= (0.75 * @plan.sqfoot).to_i %> | <%= link_to "Purchase Now!", "#" %></h3></center>
+<% else %>
+<center><h3>Price: $<%= (@plan.price * @plan.sqfoot).to_i %> | <%= link_to "Purchase Now!", "#" %></h3></center>
+<% end %>
 
 	</div>
 	
 
 <div class="well span2">
+	<center><%= link_to "Purchase Now!", "#", class: "btn btn-primary"   %></center><br /><br />
 		<% unless @plan.name.blank? %>
 		<p>
 		  <b>Name:</b>
@@ -80,11 +88,13 @@
 		  <b>Price:</b>
 		 $ <%= (@plan.price * @plan.sqfoot).to_i %>
 		</p>
-		<% end %>				
+		<% end %>
+		<% unless @plan.drawing_2.blank? %>				
 		<p>
 			<b>Secondary View:</b>
 			<%= link_to image_tag(@plan.drawing_2.url(:full)), @plan.drawing_2.url(:full), class: "lightbox_trigger" %>
 		</p>
+		<% end %>
 
 		<p>
 			<b>Elevation View:</b>
