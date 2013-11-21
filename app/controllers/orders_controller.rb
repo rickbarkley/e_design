@@ -24,12 +24,9 @@ class OrdersController < ApplicationController
   # GET /orders/new
   # GET /orders/new.json
   def new
-    @order = Order.new
+    @plan = Plan.find(params[:plan_id])
+    @order = @plan.orders.new
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @order }
-    end
   end
 
   # GET /orders/1/edit
@@ -40,18 +37,13 @@ class OrdersController < ApplicationController
   # POST /orders
   # POST /orders.json
   def create
-    @order = Order.new(params[:order])
-
-    respond_to do |format|
-      if @order.save
-        format.html { redirect_to @order, notice: 'Order was successfully created.' }
-        format.json { render json: @order, status: :created, location: @order }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @order.errors, status: :unprocessable_entity }
-      end
+        @order = Order.new(params[:order])
+        if @order.save_with_payment
+            redirect_to @order, :notice => "Thank you for your purchase!  Enjoy your Class!"
+            else
+            render :new, :notice => "Order did not Go Through!"
+        end
     end
-  end
 
   # PUT /orders/1
   # PUT /orders/1.json

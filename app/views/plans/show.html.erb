@@ -15,14 +15,14 @@
 <% if @plan.price.blank? %>
 <center><h3>Price: $<%= (0.75 * @plan.sqfoot).to_i %> | <%= link_to "Purchase Now!", "#" %></h3></center>
 <% else %>
-<center><h3>Price: $<%= (@plan.price * @plan.sqfoot).to_i %> | <%= link_to "Purchase Now!", "#" %></h3></center>
+<center><h3>Price: $<%= (@plan.price * @plan.sqfoot).to_i %> | <%= link_to "Purchase Now!", new_plan_order_path(@plan) %></h3></center>
 <% end %>
 
 	</div>
 	
 
 <div class="well span2">
-	<center><%= link_to "Purchase Now!", "#", class: "btn btn-primary"   %></center><br /><br />
+	<center><%= link_to "Purchase Now!", new_plan_order_path(@plan), class: "btn btn-primary"   %></center><br /><br />
 		<% unless @plan.name.blank? %>
 		<p>
 		  <b>Name:</b>

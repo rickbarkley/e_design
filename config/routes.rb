@@ -1,10 +1,10 @@
 EDesign::Application.routes.draw do
-  resources :orders
-
-
+     resources :orders
   devise_for :users
 
-  resources :plans
+  resources :plans do
+     resources :orders
+   end
 
 
   resources :pages
