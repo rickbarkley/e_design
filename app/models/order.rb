@@ -1,13 +1,13 @@
 class Order < ActiveRecord::Base
-  attr_accessible :plan_id, :user_id, :stripe_card_token
-  attr_accessor :stripe_card_token
+  attr_accessible :plan_id, :user_id, :stripe_card_token, :plan_cost
+  attr_accessor :stripe_card_token, :plan_cost
   belongs_to :plan
   belongs_to :user
   accepts_nested_attributes_for :plan
   
   def save_with_payment
       
-      @amount = self.plan.price * self.plan.sqfoot
+      @amount = (self.plan.price * self.plan.sqfoot * 100).to_i  
       
       if valid?
           charge = Stripe::Charge.create(amount: @amount, currency: 'usd', card: stripe_card_token)

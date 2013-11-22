@@ -1,15 +1,14 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <b>User:</b>
-  <%= @order.user_id %>
-</p>
+<h1>Thank you for your purchase of <%= @order.plan.name %></h1>
 
 <p>
   <b>Plan:</b>
-  <%= @order.plan_id %>
+  <%= @order.plane.name %>
 </p>
+<p>Please allow 3-4 days for us to print out the architectural drawings and ship them to you.</p>
+<p>If you have any questions at all please feel free to contact Rick Remore at <%= mail_to "plans@venturefour.com", "plans@venturefour.com" %> or (512) 328-8581.
+	
+<%= link_to "Back to Plans", plans_path %>	
 
-
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>
+<%#<%= link_to 'Edit', edit_order_path(@order) %> |
+<%#<%= link_to 'Back', orders_path %>
