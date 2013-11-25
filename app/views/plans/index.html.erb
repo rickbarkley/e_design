@@ -16,7 +16,7 @@
 
   <%= f.label :bathrooms_eq, "Bathrooms" %>
 <%= f.select(:bathrooms_eq, [['1', 1], ['2', 2],['3', 3],['4+', 4]],{ :prompt => "Not Sure"}) %>
-	</div>	
+
 
 	  <%= f.label :half_bath_eq, "Half-Bathrooms" %>
 	<%= f.select(:half_bath_eq, [['1', 1], ['2', 2],['3+', 3]],{ :prompt => "Not Sure"}) %>
@@ -30,7 +30,7 @@
 	
 	<%= f.label :garage_eq, "Number of Garages" %>
 	<%= f.select(:garage_eq, [['0', 1],['1', 2], ['2', 3],['3', 4],['4+', 5]],{ :prompt => "Not Sure"}) %>
-	</div>
+
 	
 	<%= f.label :stories_eq, "Levels/Design" %>
 	<%= f.select(:stories_eq, [['Single-Story', 1], ['Multi-Story', 2],['Upside-Down', 3],['Walk Out basement', 4]],{ :prompt => "Not Sure"}) %>
@@ -51,10 +51,11 @@
 
 
 
-<%= will_paginate @plans %>
+
 
     <% @plans.each do |plan| %>
 <div class="image span8">
+	<%= will_paginate @plans %>
 <%= link_to image_tag(plan.drawing_1.url(:full)), plan_path(plan) %>
 <dl class="dl-vertical">
 	<p>
