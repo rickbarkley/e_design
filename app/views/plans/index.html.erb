@@ -1,10 +1,38 @@
+<script>function moveScroller() {
+    var move = function() {
+        var st = $(window).scrollTop();
+        var ot = $("#scroller-anchor").offset().top;
+        var s = $("#scroller");
+        if(st > ot) {
+            s.css({
+                position: "fixed",
+                top: "0px"
+            });
+        } else {
+            if(st <= ot) {
+                s.css({
+                    position: "relative",
+                    top: ""
+                });
+            }
+        }
+    };
+    $(window).scroll(move);
+    move();
+}
+</script>
+<div class="searchheading">
 <h2>Advanced Plan Search</h2><br />
-
+</div>
 <div class="border span11"><p></div><br /><br />
+
+	<div id="sidebar"> 
+	  <div id="scroller-anchor"></div> 
+	  <div id="scroller" style="margin-top:10px; width:960px"> 
 
 
 <%= search_form_for @q do |f| %>
-<div class="field span3">
+<div class="searchfield span3">
 <%= f.label :sqfoot_gteq, "Square Footage Min" %>
 <%= f.text_field :sqfoot_gteq %>
 <%= f.label :sqfoot_lteq, "Square Footage Max" %>
@@ -21,7 +49,7 @@
 	  <%= f.label :half_bath_eq, "Half-Bathrooms" %>
 	<%= f.select(:half_bath_eq, [['1', 1], ['2', 2],['3+', 3]],{ :prompt => "Not Sure"}) %>
 </div>
-<div class="field span2">
+<div class="searchfield2 span2">
 
 	<%= f.label :living_eq, "Living Areas" %>
 	<%= f.select(:living_eq, [['1', 1], ['2', 2],['3', 3],['4+', 4]],{ :prompt => "Not Sure"}) %>	
@@ -48,8 +76,13 @@
 </div>
 
 <% end %>
-
-
+  </div>
+</div>
+<script type="text/javascript"> 
+  $(function() {
+    moveScroller();
+  });
+</script>
 
 
 <div class="pagination-right">
@@ -78,7 +111,7 @@
 
 </div>
 <% end %>
-<div class="page span12">
+<div class="pagination-right span11">
 <%= will_paginate @plans %>
 </div>
 <br />
