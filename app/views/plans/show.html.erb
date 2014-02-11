@@ -163,7 +163,7 @@ jQuery(document).ready(function($) {
 	</back>
 	<% if user_signed_in? %>
 	<% if current_user.has_role? :admin %>
-<%= link_to 'Edit', edit_plan_path(@plan), class: "btn btn-large btn-primary" %> <br />
+<%= link_to 'Edit', edit_plan_path(@plan), class: "btn btn-large btn-primary" %> <%= link_to 'New Plan', new_plan_path, class: "btn btn-large btn-primary" %><br /><br /><br />
 <% end %>
 <% end %>
 

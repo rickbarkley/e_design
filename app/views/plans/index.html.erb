@@ -75,7 +75,12 @@
 <p>
   <%= f.submit class: "btn btn-primary" %>
 
-<%= link_to "Start Over", plans_path, class: "btn btn-primary" %></p><br /><br /><br />
+<%= link_to "Start Over", plans_path, class: "btn btn-primary" %>
+<% if user_signed_in? %>
+	<% if current_user.has_role? :admin %>
+<%= link_to 'New Plan', new_plan_path, class: "btn btn-large btn-primary" %><br /><br /></p><br /><br /><br />
+<% end %>
+<% end %>
 </div>
 
 <% end %>
