@@ -10,4 +10,13 @@ class PagesController < ApplicationController
 
   def contact
   end
+
+  def purchase_info
+  end
+
+  def custom_mods
+  end
+
+  def questions
+  end
 end

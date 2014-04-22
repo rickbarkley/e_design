@@ -1,5 +1,16 @@
-<h1>New order | <%= @order.plan.name %> | Amount: $<%= @order.plan.price * @order.plan.sqfoot %></h1>
+<center><h1>New order | <%= @order.plan.name %> | Amount: $<%= @order.plan.price * @order.plan.sqfoot %></h1></center>
 
 <%= render 'form' %>
 
+<div class="span6">
+	<ul>
+		<h4><i class="purchase-icon fa fa-star"></i> <%= link_to "What Does My Purchase Include?", "/purchase_info" %></h4>
+		<h4><i class="purchase-icon fa fa-star"></i> <%= link_to "Frequently Asked Questions", "/questions" %></h4>
+		<h4><i class="purchase-icon fa fa-star"></i> <%= link_to "What If I Want To Make Custom Modificatons To The Plan?", "/custom_mods" %></h4><br />
+		
+	</ul>
+</div>
+<div class="span12">
+
 <%= link_to 'Back', orders_path %>
+</div>
